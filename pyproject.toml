@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "git-tui"
 version = "0.1.0"
 description = "A simple TUI for Git operations"
-authors = [{name = "Your Name"}]
+authors = [{name = "<Your Name or Org>"}]
 dependencies = [
     "textual",
     "psycopg2-binary",
