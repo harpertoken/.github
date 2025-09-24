@@ -147,7 +147,7 @@ class GitTUI(App):
                 rows = cur.fetchall()
                 history = "\n".join([f"{row[1]}: {row[0]}" for row in rows])
                 self.query_one("#output", Static).update(history or "No history")
-        except Exception as e:
+        except psycopg2.Error as e:
             self.query_one("#output", Static).update(f"Error: {str(e)}")
 
 
