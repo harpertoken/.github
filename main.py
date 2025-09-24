@@ -67,19 +67,19 @@ class GitTUI(App):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         button_id = event.button.id
         if button_id == "status":
-            self.run_git_command("git status")
+            self.run_git_command(["git", "status"])
         elif button_id == "add_all":
-            self.run_git_command("git add .")
+            self.run_git_command(["git", "add", "."])
         elif button_id == "diff":
-            self.run_git_command("git diff")
+            self.run_git_command(["git", "diff"])
         elif button_id == "log":
-            self.run_git_command("git log --oneline -10")
+            self.run_git_command(["git", "log", "--oneline", "-10"])
         elif button_id == "commit":
             self.handle_commit()
         elif button_id == "push":
-            self.run_git_command("git push")
+            self.run_git_command(["git", "push"])
         elif button_id == "pull":
-            self.run_git_command("git pull")
+            self.run_git_command(["git", "pull"])
         elif button_id == "history":
             self.show_history()
 
@@ -89,19 +89,19 @@ class GitTUI(App):
 
     def on_key(self, event):
         if event.key == "s":
-            self.run_git_command("git status")
+            self.run_git_command(["git", "status"])
         elif event.key == "a":
-            self.run_git_command("git add .")
+            self.run_git_command(["git", "add", "."])
         elif event.key == "d":
-            self.run_git_command("git diff")
+            self.run_git_command(["git", "diff"])
         elif event.key == "l":
-            self.run_git_command("git log --oneline -10")
+            self.run_git_command(["git", "log", "--oneline", "-10"])
         elif event.key == "c":
             self.query_one("#commit_input", Input).focus()
         elif event.key == "p":
-            self.run_git_command("git push")
+            self.run_git_command(["git", "push"])
         elif event.key == "u":
-            self.run_git_command("git pull")
+            self.run_git_command(["git", "pull"])
         elif event.key == "h":
             self.show_history()
 
@@ -145,7 +145,7 @@ class GitTUI(App):
                     "SELECT command, timestamp FROM command_history ORDER BY timestamp DESC LIMIT 10"
                 )
                 rows = cur.fetchall()
-                history = "\n".join([f"{row[1]}: {row[0]}" for row in rows])
+                history = "\n".join([f"{row[1]}: {' '.join(row[0])}" for row in rows])
                 self.query_one("#output", Static).update(history or "No history")
         except psycopg2.Error as e:
             self.query_one("#output", Static).update(f"Error: {str(e)}")
