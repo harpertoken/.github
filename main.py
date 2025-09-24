@@ -132,7 +132,7 @@ class GitTUI(App):
             self.query_one("#output", Static).update("Please enter a commit message.")
             input_widget.focus()
             return
-        self.run_git_command(f"git commit -m '{message}'")
+        self.run_git_command(["git", "commit", "-m", message])
         input_widget.value = ""  # Clear input
 
     def show_history(self):
