@@ -12,7 +12,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Installation
 
-pip install -r requirements.txt
+pip install .
 
 ## Usage
 
@@ -62,6 +62,7 @@ The app is built with Textual for the TUI framework. Main components:
 │   ├── ISSUE_TEMPLATE/          # Issue templates
 │   ├── workflows/               # GitHub Actions
 │   └── PULL_REQUEST_TEMPLATE.md # PR template
+├── docs/                        # Documentation
 ├── tests/                       # Test files
 ├── CONTRIBUTING.md              # Contributing guide
 ├── Dockerfile                   # Docker image
@@ -71,7 +72,6 @@ The app is built with Textual for the TUI framework. Main components:
 ├── docker-compose.yml           # Docker Compose
 ├── main.py                      # Main app code
 ├── pyproject.toml               # Packaging config
-├── requirements.txt             # Dependencies
 └── run_tests.py                 # Test runner
 ```
 
