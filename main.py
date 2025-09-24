@@ -122,7 +122,7 @@ class GitTUI(App):
                         (command, datetime.now()),
                     )
                     self.conn.commit()
-        except Exception as e:
+        except (FileNotFoundError, subprocess.SubprocessError) as e:
             self.query_one("#output", Static).update(f"Error: {str(e)}")
 
     def handle_commit(self):
