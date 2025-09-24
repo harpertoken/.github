@@ -33,7 +33,7 @@ class TestGitTUI:
         mock_query.side_effect = [mock_input, mock_static]
         app.handle_commit()
         mock_run.assert_called_once_with(
-            ["git", "commit", "-m", "'test", "commit'"],
+            ["git", "commit", "-m", "test commit"],
             capture_output=True,
             text=True,
             cwd=os.getcwd(),
