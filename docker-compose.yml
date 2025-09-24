@@ -5,11 +5,11 @@ services:
     build: .
     depends_on:
       - postgres
-    environment:
-      - POSTGRES_HOST=postgres
-      - POSTGRES_DB=git_tui
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
+     environment:
+       - POSTGRES_HOST=postgres
+       - POSTGRES_DB=${POSTGRES_DB}
+       - POSTGRES_USER=${POSTGRES_USER}
+       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
       - .:/app
       - /app/__pycache__
@@ -18,10 +18,10 @@ services:
 
   postgres:
     image: postgres:13
-    environment:
-      POSTGRES_DB: git_tui
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+     environment:
+       POSTGRES_DB: ${POSTGRES_DB}
+       POSTGRES_USER: ${POSTGRES_USER}
+       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

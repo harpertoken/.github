@@ -1,6 +1,0 @@
-textual[test]
-pytest
-pytest-asyncio
-pytest-cov
-bandit
-ruff

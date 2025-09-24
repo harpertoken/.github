@@ -9,16 +9,19 @@ description = "A simple TUI for Git operations"
 authors = [{name = "<Your Name or Org>"}]
 dependencies = [
     "textual",
-    "psycopg2-binary",
 ]
 
 [project.optional-dependencies]
 test = [
     "pytest",
+    "pytest-asyncio",
     "pytest-cov",
     "textual[test]",
     "bandit",
     "ruff",
+]
+postgres = [
+    "psycopg2-binary",
 ]
 
 [project.scripts]
