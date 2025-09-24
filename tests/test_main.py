@@ -54,7 +54,7 @@ class TestGitTUI:
         )
         mock_static = MagicMock()
         mock_query.return_value = mock_static
-        app.run_git_command("git status")
+        app.run_git_command(["git", "status"])
         mock_run.assert_called_once_with(
             ["git", "status"], capture_output=True, text=True, cwd=os.getcwd()
         )
@@ -66,5 +66,5 @@ class TestGitTUI:
         mock_run.return_value = MagicMock(stdout="", stderr="error", returncode=1)
         mock_static = MagicMock()
         mock_query.return_value = mock_static
-        app.run_git_command("git status")
+        app.run_git_command(["git", "status"])
         mock_static.update.assert_called_with("Error (exit code 1):\nerror")
