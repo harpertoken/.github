@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-tui"
+version = "0.1.0"
+description = "A simple TUI for Git operations"
+authors = [{name = "Your Name"}]
+dependencies = [
+    "textual",
+    "psycopg2-binary",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "textual[test]",
+    "bandit",
+    "ruff",
+]
+
+[project.scripts]
+git-tui = "main:main"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"

@@ -1,0 +1,5 @@
+textual[test]
+pytest
+pytest-cov
+bandit
+ruff
