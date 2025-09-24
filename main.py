@@ -105,10 +105,10 @@ class GitTUI(App):
         elif event.key == "h":
             self.show_history()
 
-    def run_git_command(self, command: str):
+    def run_git_command(self, command: list[str]):
         try:
             result = subprocess.run(  # nosec B603
-                command.split(), capture_output=True, text=True, cwd=os.getcwd()
+                command, capture_output=True, text=True, cwd=os.getcwd()
             )
             output = result.stdout + result.stderr
             if result.returncode != 0:
