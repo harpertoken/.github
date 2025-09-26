@@ -1,0 +1,13 @@
+name: Test Trigger
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test trigger
+        run: echo "Tag ${{ github.ref_name }} triggered the workflow successfully"
