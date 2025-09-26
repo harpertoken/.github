@@ -1,0 +1,14 @@
+# Branch protection for main
+branches:
+  - name: main
+    protection:
+      required_status_checks:
+        contexts:
+          - test
+          - codeql
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+      restrictions: null
+       enforce_admins: true
+      allow_force_pushes: false
+      allow_deletions: false
