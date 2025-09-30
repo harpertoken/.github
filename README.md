@@ -18,6 +18,13 @@ pip install .
 
 python main.py
 
+## Troubleshooting
+
+If files or folders are not visible (especially hidden files starting with .), on macOS:
+
+- In Finder: Press `Cmd` + `Shift` + `.` to temporarily toggle hidden files.
+- Via Terminal (persistent): `defaults write com.apple.finder AppleShowAllFiles YES && killall Finder`. To hide again, replace `YES` with `NO`.
+
 ## Docker
 
 Build and run with Docker Compose:
