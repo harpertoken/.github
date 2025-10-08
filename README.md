@@ -10,6 +10,32 @@ See [docs/](docs/) for detailed project state and coverage info.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
+## Conventional Commits
+
+This project follows conventional commit standards.
+
+### Setup
+
+To enable commit message validation:
+
+1. Copy the commit hook: `cp scripts/commit-msg .git/hooks/commit-msg`
+2. Make it executable: `chmod +x .git/hooks/commit-msg`
+
+### Usage
+
+Commit messages must:
+- Start with a type: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `perf:`, `ci:`, `build:`, `revert:`
+- Be lowercase
+- First line ≤60 characters
+
+### History Cleanup
+
+To rewrite existing commit messages in the history:
+
+Run `scripts/rewrite_msg.sh`
+
+This will lowercase and truncate first lines, then force-push the changes.
+
 ## Installation
 
 pip install .
