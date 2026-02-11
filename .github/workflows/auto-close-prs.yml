@@ -20,7 +20,7 @@ jobs:
           script: |
             try {
               const response = await github.rest.orgs.checkMembershipForUser({
-                org: `github`,
+                org: `harpertoken`,
                 username: context.payload.pull_request.user.login
               });
 
