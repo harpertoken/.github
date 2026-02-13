@@ -29,4 +29,4 @@ git-tui = "main:main"
 
 [tool.ruff]
 line-length = 88
-target-version = "py39"
+target-version = "py314"
