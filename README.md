@@ -1,3 +1,5 @@
+<img src="profile/brand.png" alt="Git TUI" width="200">
+
 # Git TUI
 
 A simple Terminal User Interface for Git operations.
