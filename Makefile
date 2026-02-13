@@ -9,3 +9,5 @@ install: .venv
 
 clean:
 	rm -rf .venv
+
+start: install run
