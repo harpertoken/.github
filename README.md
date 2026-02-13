@@ -40,7 +40,21 @@ This will lowercase and truncate first lines, then force-push the changes.
 
 ## Installation
 
-pip install .
+```bash
+make install
+```
+
+Or with one command to install and run:
+
+```bash
+make start
+```
+
+## Usage
+
+```bash
+make run
+```
 
 ## Usage
 
