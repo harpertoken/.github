@@ -2,6 +2,8 @@
 
 A simple Terminal User Interface for Git operations.
 
+&copy; 2026
+
 ## Documentation
 
 See [docs/](docs/) for detailed project state and coverage info.
