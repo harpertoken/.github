@@ -1,4 +1,4 @@
-![Background](/profile/new_background.jpg)
+![harpertoken background](https://github.com/harpertoken/.github/raw/main/profile/new_background.jpg)
 
 ## ✨ What’s new
 
