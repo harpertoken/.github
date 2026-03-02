@@ -27,6 +27,14 @@ postgres = [
 [project.scripts]
 git-tui = "main:main"
 
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["main*"]
+exclude = ["tests*", "docs*", "scripts*", "images*", "profile*", ".kilo*"]
+
 [tool.ruff]
 line-length = 88
 target-version = "py314"
