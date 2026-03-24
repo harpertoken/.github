@@ -4,7 +4,13 @@
 
 If you are coming from the classic experience, the new experience should feel familiar but adds some significant improvements.
 
-## 📊 Org Activity
+## About harpertoken
+
+We’re building harpertoken in the open: shipping small, learning fast, and keeping our repos tidy so it’s easy to follow along.
+
+<details>
+  <summary><strong>org activity</strong></summary>
+  <br />
 
 <!-- ORG_ACTIVITY:START -->
 - 2026-03-24 — @bniladridas pushed commits to [harpertoken/.github](https://github.com/harpertoken/.github) ([diff](https://github.com/harpertoken/.github/compare/1b53cd7868adba05769cb851587066ad04be2247...b8018da95506010a25c92557735039af02d72dc1))
@@ -23,6 +29,5 @@ If you are coming from the classic experience, the new experience should feel fa
 - 2026-03-24 — @bniladridas pushed commits to [harpertoken/hwh-core](https://github.com/harpertoken/hwh-core) ([diff](https://github.com/harpertoken/hwh-core/compare/a441aa1ac7361913d1d8ed8bd25f6a4e2925d3a8...8e79e19baa33108ad26113db737e19a33e663309))
 - 2026-03-24 — @bniladridas pushed commits to [harpertoken/hwh-core](https://github.com/harpertoken/hwh-core) ([diff](https://github.com/harpertoken/hwh-core/compare/497e018da65957225352d0b6c1af0b2cc6dc3a94...a441aa1ac7361913d1d8ed8bd25f6a4e2925d3a8))
 <!-- ORG_ACTIVITY:END -->
-
----
 _Last updated: 2026-03-24T11:45:25.143Z_
+</details>

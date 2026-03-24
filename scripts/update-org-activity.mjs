@@ -4,7 +4,7 @@ const ORG =
   process.env.ORG_NAME ||
   process.env.GITHUB_REPOSITORY_OWNER ||
   process.env.GITHUB_ACTOR;
-const OUTPUT_FILE = process.env.OUTPUT_FILE || "profile/README.md";
+const OUTPUT_FILE = process.env.OUTPUT_FILE || "profile/readme.md";
 const MAX_ITEMS = Number.parseInt(process.env.MAX_ITEMS || "15", 10);
 const EXCLUDE_TYPES = new Set(
   (process.env.EXCLUDE_TYPES || "WatchEvent")
@@ -144,10 +144,17 @@ function updateReadme(original, activityLines) {
   const end = "<!-- ORG_ACTIVITY:END -->";
   const updatedTag = "<!-- ORG_ACTIVITY_UPDATED -->";
   const updatedAt = new Date().toISOString();
+  const updateTimestamp = (text) => {
+    if (text.includes(updatedTag)) return text.replace(updatedTag, updatedAt);
+    return text.replace(
+      /(_Last updated:\s*)(\d{4}-\d{2}-\d{2}T[0-9:.]+Z)(\s*_)/,
+      `$1${updatedAt}$3`,
+    );
+  };
 
   if (!original.includes(start) || !original.includes(end)) {
     const section = [
-      "## 📊 Org Activity",
+      "## Org activity",
       "",
       start,
       ...activityLines,
@@ -156,13 +163,13 @@ function updateReadme(original, activityLines) {
       `_Last updated: ${updatedTag}_`,
       "",
     ].join("\n");
-    return `${original.trimEnd()}\n\n${section}`.replace(updatedTag, updatedAt);
+    return updateTimestamp(`${original.trimEnd()}\n\n${section}`);
   }
 
   const before = original.slice(0, original.indexOf(start) + start.length);
   const after = original.slice(original.indexOf(end));
   const next = `${before}\n${activityLines.join("\n")}\n${after}`;
-  return next.replace(updatedTag, updatedAt);
+  return updateTimestamp(next);
 }
 
 const allEvents = await fetchOrgEvents();
@@ -185,4 +192,3 @@ const next = updateReadme(current, lines);
 if (next !== current) {
   await fs.writeFile(OUTPUT_FILE, next, "utf8");
 }
-
