@@ -1,12 +1,12 @@
 ![harpertoken background](https://github.com/harpertoken/.github/raw/main/profile/new_background.jpg)
 
-## ✨ What's new
+### ✦ About
 
-If you are coming from the classic experience, the new experience should feel familiar but adds some significant improvements.
+We build in public with a tight feedback loop: ship small, test often, and document decisions.
 
-## ✦ About
+### ✨ What's new
 
-We build in public and keep a tight feedback loop: ship small, test often, document decisions.
+Highlights from across the org, with a live activity feed below.
 
 <details>
   <summary><strong>org activity</strong></summary>
