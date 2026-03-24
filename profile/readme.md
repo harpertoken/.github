@@ -4,9 +4,9 @@
 
 If you are coming from the classic experience, the new experience should feel familiar but adds some significant improvements.
 
-## About harpertoken
+## ✦ About
 
-We’re building harpertoken in the open: shipping small, learning fast, and keeping our repos tidy so it’s easy to follow along.
+We build in public and keep a tight feedback loop: ship small, test often, document decisions.
 
 <details>
   <summary><strong>org activity</strong></summary>
