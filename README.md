@@ -1,10 +1,23 @@
-<img src="profile/brand.png" alt="Git TUI" width="200">
+<img src="profile/brand.png" alt="harpertoken" width="200">
 
 # Git TUI
 
 A simple Terminal User Interface for Git operations.
 
 &copy; 2026
+
+## Org defaults (harpertoken)
+
+This is also the `harpertoken/.github` repository, which powers organization-level defaults:
+
+- Org profile content: `profile/readme.md`
+- Org activity bot: `.github/workflows/update-org-activity.yml` updates the activity block in `profile/readme.md`
+- Default templates: `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`
+
+The activity bot rewrites only the section between:
+
+- `<!-- ORG_ACTIVITY:START -->`
+- `<!-- ORG_ACTIVITY:END -->`
 
 ## Documentation
 
@@ -14,7 +27,14 @@ See [docs/](docs/) for detailed project state and coverage info.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## Conventional Commits
+## Local checks
+
+This repo uses `pre-commit`:
+
+- Install hooks: `pre-commit install`
+- Run all checks: `pre-commit run --all-files`
+
+## Conventional commits
 
 This project follows conventional commit standards.
 
@@ -28,11 +48,12 @@ To enable commit message validation:
 ### Usage
 
 Commit messages must:
+
 - Start with a type: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`, `perf:`, `ci:`, `build:`, `revert:`
 - Be lowercase
 - First line ≤60 characters
 
-### History Cleanup
+### History cleanup
 
 To rewrite existing commit messages in the history:
 
@@ -58,30 +79,46 @@ make start
 make run
 ```
 
-## Usage
+Or:
 
+```bash
 python main.py
+```
 
 ## Troubleshooting
 
-If files or folders are not visible (especially hidden files starting with .), on macOS:
+If files or folders are not visible (especially hidden files starting with `.`), on macOS:
 
-- In Finder: Press `Cmd` + `Shift` + `.` to temporarily toggle hidden files.
-- Via Terminal (persistent): `defaults write com.apple.finder AppleShowAllFiles YES && killall Finder`. To hide again, replace `YES` with `NO`.
+- In Finder: Press `Cmd` + `Shift` + `.`
+- Via Terminal (persistent): `defaults write com.apple.finder AppleShowAllFiles YES && killall Finder` (hide again with `NO`)
 
 ## Docker
 
 Build and run with Docker Compose:
 
+```bash
 docker-compose up --build
+```
 
 ## Testing
 
-Run tests with coverage and security scan: python run_tests.py
+Run tests with coverage and security scan:
 
-Or manually: pytest --cov=main --cov-report=html tests/
+```bash
+python run_tests.py
+```
 
-Run all checks before commit/push: python check_all.py
+Or manually:
+
+```bash
+pytest --cov=main --cov-report=html tests/
+```
+
+Run all checks before commit/push:
+
+```bash
+python check_all.py
+```
 
 ## Security
 
@@ -93,20 +130,27 @@ Code linted and formatted with Ruff. Run `ruff check .` for linting and `ruff fo
 
 ## Release
 
-Bump version: python bump_version.py <major|minor|patch>
+Bump version:
 
-Then tag a version (e.g., v1.0.0) to trigger automated release with built package.
+```bash
+python bump_version.py <major|minor|patch>
+```
 
-## Code Architecture
+Then tag a version (e.g., `v1.0.0`) to trigger the release workflow.
+
+## Code architecture
 
 ### Overview
-The app is built with Textual for the TUI framework. Main components:
-- `GitTUI` class: Core app logic, UI composition, event handling
-- Git command execution: Uses `subprocess` to run shell commands
-- Database: Optional PostgreSQL for command history (falls back gracefully)
-- UI: Buttons for actions, input for commit messages, output display
 
-### Project Structure
+The app is built with Textual for the TUI framework. Main components:
+
+- `GitTUI` class: core app logic, UI composition, event handling
+- Git command execution: uses `subprocess` to run shell commands
+- Database: optional PostgreSQL for command history (falls back gracefully)
+- UI: buttons for actions, input for commit messages, output display
+
+### Project structure
+
 ```
 .
 ├── .github/
@@ -122,24 +166,26 @@ The app is built with Textual for the TUI framework. Main components:
 ├── check_all.py                 # Pre-commit checks
 ├── docker-compose.yml           # Docker Compose
 ├── main.py                      # Main app code
-├── pyproject.toml               # Packaging config
 └── run_tests.py                 # Test runner
 ```
 
-### Key Files
-- `main.py`: Entry point, app definition
-- `tests/`: Unit and e2e tests
-- `pyproject.toml`: Packaging and dependencies
+### Key files
+
+- `main.py`: entry point, app definition
+- `tests/`: unit and e2e tests
+- `pyproject.toml`: packaging and dependencies
 - Workflows: CI/CD automation
 
-### How to Operate
-1. **Run the App**: `python main.py` launches the TUI
-2. **Git Operations**: Click buttons or use keyboard shortcuts (s=status, a=add, etc.)
-3. **Commit**: Type message in input field, press Enter or click Commit
-4. **History**: View past commands if DB is connected
-5. **Development**: Run `python check_all.py` before committing
+### How to operate
 
-### Understanding the Code
+1. **Run the app**: `python main.py` launches the TUI
+2. **Git operations**: click buttons or use keyboard shortcuts (`s`=status, `a`=add, etc.)
+3. **Commit**: type message in input field, press Enter or click Commit
+4. **History**: view past commands if DB is connected
+5. **Development**: run `python check_all.py` before committing
+
+### Understanding the code
+
 - App initializes DB connection (optional)
 - UI built with Textual widgets (Header, Buttons, Input, Static)
 - Events handled via `on_button_pressed` and `on_key`
