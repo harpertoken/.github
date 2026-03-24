@@ -1,0 +1,43 @@
+name: Update Org Activity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/30 * * * *"
+
+concurrency:
+  group: update-org-activity
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update profile README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_NAME: ${{ github.repository_owner }}
+          OUTPUT_FILE: profile/README.md
+          MAX_ITEMS: "15"
+          EXCLUDE_TYPES: "WatchEvent"
+        run: node scripts/update-org-activity.mjs
+
+      - name: Commit changes (if any)
+        run: |
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          git commit -m "chore(profile): update org activity"
+          git push
+
