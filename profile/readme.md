@@ -4,6 +4,8 @@
 
 We build in public with a tight feedback loop: ship small, test often, and document decisions.
 
+---
+
 ### ✨ What's new
 
 Highlights from across the org, with a live activity feed below.
