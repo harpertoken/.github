@@ -1,4 +1,4 @@
-<img src="profile/brand.png" alt="harpertoken" width="200">
+![harpertoken](profile/brand.png)
 
 # Git TUI
 
