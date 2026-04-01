@@ -1,20 +1,11 @@
 {
-  "version": "1.0",
-  "exclude": [
-    "__pycache__",
-    "*.pyc",
-    ".pytest_cache",
-    ".coverage",
-    "htmlcov",
-    "dist",
-    "build",
-    "*.egg-info",
-    ".venv",
-    "venv",
-    ".env",
-    ".git"
-  ],
-  "include": [],
-  "commands": {},
-  "env": {}
+  "$schema": "https://app.kilo.ai/config.json",
+  "permission": {
+    "read": {
+      "*": "allow"
+    },
+    "edit": {
+      "*": "allow"
+    }
+  }
 }
