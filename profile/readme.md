@@ -15,6 +15,7 @@ Highlights from across the org, with a live activity feed below.
   <br />
 
 <!-- ORG_ACTIVITY:START -->
+- 2026-04-09 — @github-actions[bot] pushed commits to [harpertoken/.github](https://github.com/harpertoken/.github) ([diff](https://github.com/harpertoken/.github/compare/595d773f7815d8187ab163a3d570116f6e3f0892...486f86b78c4f952702be1f364619845592b6fbe7))
 - 2026-04-09 — @github-actions[bot] pushed commits to [harpertoken/.github](https://github.com/harpertoken/.github) ([diff](https://github.com/harpertoken/.github/compare/f56f406b4b3c2bdd720c635403d67cc013e2b59c...595d773f7815d8187ab163a3d570116f6e3f0892))
 - 2026-04-09 — @github-actions[bot] pushed commits to [harpertoken/.github](https://github.com/harpertoken/.github) ([diff](https://github.com/harpertoken/.github/compare/3b0888632be38785192396dc9c39fa01999ce883...f56f406b4b3c2bdd720c635403d67cc013e2b59c))
 - 2026-04-09 — @github-actions[bot] pushed commits to [harpertoken/.github](https://github.com/harpertoken/.github) ([diff](https://github.com/harpertoken/.github/compare/316456650f9dcab11ba7d8419cdff1599fb36724...3b0888632be38785192396dc9c39fa01999ce883))
@@ -29,7 +30,6 @@ Highlights from across the org, with a live activity feed below.
 - 2026-04-09 — @github-actions[bot] labeled PR [#221](undefined) in [harpertoken/harper](https://github.com/harpertoken/harper)
 - 2026-04-09 — @github-actions[bot] labeled PR [#221](undefined) in [harpertoken/harper](https://github.com/harpertoken/harper)
 - 2026-04-09 — @github-actions[bot] labeled PR [#221](undefined) in [harpertoken/harper](https://github.com/harpertoken/harper)
-- 2026-04-09 — @dependabot[bot] labeled PR [#221](undefined) in [harpertoken/harper](https://github.com/harpertoken/harper)
 <!-- ORG_ACTIVITY:END -->
-_Last updated: 2026-04-09T13:14:51.703Z_
+_Last updated: 2026-04-09T15:05:23.655Z_
 </details>
