@@ -143,13 +143,21 @@ function updateReadme(original, activityLines) {
   const start = "<!-- ORG_ACTIVITY:START -->";
   const end = "<!-- ORG_ACTIVITY:END -->";
   const updatedTag = "<!-- ORG_ACTIVITY_UPDATED -->";
-  const updatedAt = new Date().toISOString();
+  const now = new Date();
+  const updatedAt = now.toISOString();
+  const updatedAtIST = now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", hour12: false });
+  const updatedAtIST12 = now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", hour12: true, hour: "numeric", minute: "2-digit", second: "2-digit" });
+  const hourIST = now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", hour12: false }).padStart(2, "0");
+  const hourNum = Number.parseInt(hourIST, 10);
+  const emoji = hourNum >= 18 || hourNum < 6 ? " 🌙" : "";
+  const istLine = `_Last updated: ${updatedAt} • IST: ${updatedAtIST} (${updatedAtIST12})${emoji}_`;
   const updateTimestamp = (text) => {
     if (text.includes(updatedTag)) return text.replace(updatedTag, updatedAt);
-    return text.replace(
-      /(_Last updated:\s*)(\d{4}-\d{2}-\d{2}T[0-9:.]+Z)(\s*_)/,
-      `$1${updatedAt}$3`,
-    );
+    return text
+      .replace(
+        /(_Last updated:.*?\d{4}-\d{2}-\d{2}T[0-9:.]+Z.*?_)/g,
+        istLine,
+      );
   };
 
   if (!original.includes(start) || !original.includes(end)) {
@@ -160,7 +168,7 @@ function updateReadme(original, activityLines) {
       ...activityLines,
       end,
       "",
-      `_Last updated: ${updatedTag}_`,
+      istLine,
       "",
     ].join("\n");
     return updateTimestamp(`${original.trimEnd()}\n\n${section}`);
