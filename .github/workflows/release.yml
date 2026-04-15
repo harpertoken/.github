@@ -27,7 +27,7 @@ jobs:
       - name: Build package
         run: python -m build
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: ./dist/git-tui-${{ env.TAG }}.tar.gz
         env:
