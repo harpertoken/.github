@@ -1,4 +1,4 @@
-<a href="https://github.com/harpertoken/.github" aria-label="git-gui"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#44403c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg> <code>git-gui</code></a>
+<a href="https://github.com/harpertoken/.github" aria-label="git-gui"><img src="profile/mark.svg" width="16" height="16" alt=""> <code>git-gui</code></a>
 
 GUI for common Git operations.
 
