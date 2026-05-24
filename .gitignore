@@ -1,2 +1,22 @@
+# Environment
 .env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Coverage
+.coverage
 coverage.xml
+htmlcov/
+
+# OS/editor
+.DS_Store

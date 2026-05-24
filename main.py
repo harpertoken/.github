@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 
-from textual.app import App, ComposeResult
-from textual.widgets import Header, Footer, Button, Static, Input
-from textual.containers import Container, Vertical
-import subprocess  # nosec B404
+from datetime import datetime
 import os
+import subprocess  # nosec B404
 
 try:
     import psycopg2
@@ -12,28 +10,53 @@ try:
     HAS_PSYCOPG2 = True
 except ImportError:
     HAS_PSYCOPG2 = False
-from datetime import datetime
+
+try:
+    import tkinter as tk
+    from tkinter import scrolledtext
+
+    HAS_TKINTER = True
+except ImportError:
+    tk = None
+    scrolledtext = None
+    HAS_TKINTER = False
 
 
-class GitTUI(App):
-    """A simple TUI for Git operations."""
+class GitGUI:
+    """A small GUI for common Git operations."""
 
-    def __init__(self):
-        super().__init__()
-        if HAS_PSYCOPG2:
-            try:
-                self.conn = psycopg2.connect(
-                    dbname=os.environ.get("POSTGRES_DB", "git_tui"),
-                    user=os.environ.get("POSTGRES_USER", "user"),
-                    password=os.environ.get("POSTGRES_PASSWORD", "password"),
-                    host=os.environ.get("POSTGRES_HOST", "localhost"),
+    def __init__(self, root=None, build_ui=True, connect_db=True):
+        self.root = root
+        self.conn = None
+        self.commit_var = None
+        self.output = None
+
+        if connect_db:
+            self.connect_database()
+
+        if build_ui:
+            if not HAS_TKINTER:
+                raise RuntimeError(
+                    "Tkinter is not available in this Python build. "
+                    "Install a Python distribution with Tk support to run the GUI."
                 )
-                self.create_table()
-            except Exception as e:
-                print(f"PostgreSQL not available: {e}. Running without database.")
-                self.conn = None
-        else:
-            print("psycopg2 not installed. Running without database.")
+            self.root = self.root or tk.Tk()
+            self.build_ui()
+
+    def connect_database(self):
+        if not HAS_PSYCOPG2:
+            return
+
+        try:
+            self.conn = psycopg2.connect(
+                dbname=os.environ.get("POSTGRES_DB", "git_tui"),
+                user=os.environ.get("POSTGRES_USER", "user"),
+                password=os.environ.get("POSTGRES_PASSWORD", "password"),
+                host=os.environ.get("POSTGRES_HOST", "localhost"),
+            )
+            self.create_table()
+        except Exception as exc:
+            print(f"PostgreSQL not available: {exc}. Running without database.")
             self.conn = None
 
     def create_table(self):
@@ -47,63 +70,63 @@ class GitTUI(App):
             """)
             self.conn.commit()
 
-    def compose(self) -> ComposeResult:
-        yield Header()
-        yield Footer()
-        with Container():
-            with Vertical():
-                yield Static("Git TUI", id="title")
-                yield Button("Git Status", id="status")
-                yield Button("Git Add All", id="add_all")
-                yield Button("Git Diff", id="diff")
-                yield Button("Git Log", id="log")
-                yield Button("Git Commit", id="commit")
-                yield Button("Git Push", id="push")
-                yield Button("Git Pull", id="pull")
-                yield Button("Command History", id="history")
-                yield Input(placeholder="Commit message", id="commit_input")
-                yield Static("", id="output")
+    def build_ui(self):
+        self.root.title("Git GUI")
+        self.root.geometry("760x520")
 
-    def on_button_pressed(self, event: Button.Pressed) -> None:
-        button_id = event.button.id
-        if button_id == "status":
-            self.run_git_command(["git", "status"])
-        elif button_id == "add_all":
-            self.run_git_command(["git", "add", "."])
-        elif button_id == "diff":
-            self.run_git_command(["git", "diff"])
-        elif button_id == "log":
-            self.run_git_command(["git", "log", "--oneline", "-10"])
-        elif button_id == "commit":
-            self.handle_commit()
-        elif button_id == "push":
-            self.run_git_command(["git", "push"])
-        elif button_id == "pull":
-            self.run_git_command(["git", "pull"])
-        elif button_id == "history":
-            self.show_history()
+        frame = tk.Frame(self.root, padx=12, pady=12)
+        frame.pack(fill=tk.BOTH, expand=True)
 
-    def on_input_submitted(self, event: Input.Submitted) -> None:
-        if event.input.id == "commit_input":
-            self.handle_commit()
+        button_frame = tk.Frame(frame)
+        button_frame.pack(fill=tk.X)
 
-    def on_key(self, event):
-        if event.key == "s":
-            self.run_git_command(["git", "status"])
-        elif event.key == "a":
-            self.run_git_command(["git", "add", "."])
-        elif event.key == "d":
-            self.run_git_command(["git", "diff"])
-        elif event.key == "l":
-            self.run_git_command(["git", "log", "--oneline", "-10"])
-        elif event.key == "c":
-            self.query_one("#commit_input", Input).focus()
-        elif event.key == "p":
-            self.run_git_command(["git", "push"])
-        elif event.key == "u":
-            self.run_git_command(["git", "pull"])
-        elif event.key == "h":
-            self.show_history()
+        actions = [
+            ("Status", lambda: self.run_git_command(["git", "status"])),
+            ("Add All", lambda: self.run_git_command(["git", "add", "."])),
+            ("Diff", lambda: self.run_git_command(["git", "diff"])),
+            ("Log", lambda: self.run_git_command(["git", "log", "--oneline", "-10"])),
+            ("Push", lambda: self.run_git_command(["git", "push"])),
+            ("Pull", lambda: self.run_git_command(["git", "pull"])),
+            ("History", self.show_history),
+        ]
+
+        for label, command in actions:
+            tk.Button(button_frame, text=label, command=command).pack(
+                side=tk.LEFT, padx=(0, 8), pady=(0, 10)
+            )
+
+        commit_frame = tk.Frame(frame)
+        commit_frame.pack(fill=tk.X)
+
+        self.commit_var = tk.StringVar()
+        commit_entry = tk.Entry(commit_frame, textvariable=self.commit_var)
+        commit_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 8))
+        commit_entry.bind("<Return>", lambda _event: self.handle_commit())
+
+        tk.Button(commit_frame, text="Commit", command=self.handle_commit).pack(
+            side=tk.LEFT
+        )
+
+        self.output = scrolledtext.ScrolledText(frame, wrap=tk.WORD, height=22)
+        self.output.pack(fill=tk.BOTH, expand=True, pady=(12, 0))
+
+    def set_output(self, text):
+        if self.output is None:
+            return
+
+        self.output.configure(state=tk.NORMAL)
+        self.output.delete("1.0", tk.END)
+        self.output.insert(tk.END, text)
+        self.output.configure(state=tk.DISABLED)
+
+    def get_commit_message(self):
+        if self.commit_var is None:
+            return ""
+        return self.commit_var.get().strip()
+
+    def clear_commit_message(self):
+        if self.commit_var is not None:
+            self.commit_var.set("")
 
     def run_git_command(self, command: list[str]):
         try:
@@ -113,47 +136,51 @@ class GitTUI(App):
             output = result.stdout + result.stderr
             if result.returncode != 0:
                 output = f"Error (exit code {result.returncode}):\n{output}"
-            self.query_one("#output", Static).update(output)
-            # Store in db if available
-            if self.conn:
-                with self.conn.cursor() as cur:
-                    cur.execute(
-                        "INSERT INTO command_history (command, timestamp) VALUES (%s, %s)",
-                        (command, datetime.now()),
-                    )
-                    self.conn.commit()
-        except (FileNotFoundError, subprocess.SubprocessError) as e:
-            self.query_one("#output", Static).update(f"Error: {str(e)}")
+            self.set_output(output)
+            self.store_command(command)
+        except (FileNotFoundError, subprocess.SubprocessError) as exc:
+            self.set_output(f"Error: {exc}")
+
+    def store_command(self, command: list[str]):
+        if not self.conn:
+            return
+
+        with self.conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO command_history (command, timestamp) VALUES (%s, %s)",
+                (command, datetime.now()),
+            )
+            self.conn.commit()
 
     def handle_commit(self):
-        input_widget = self.query_one("#commit_input", Input)
-        message = input_widget.value.strip()
+        message = self.get_commit_message()
         if not message:
-            self.query_one("#output", Static).update("Please enter a commit message.")
-            input_widget.focus()
+            self.set_output("Please enter a commit message.")
             return
         self.run_git_command(["git", "commit", "-m", message])
-        input_widget.value = ""  # Clear input
+        self.clear_commit_message()
 
     def show_history(self):
         if not self.conn:
-            self.query_one("#output", Static).update("Database not available")
+            self.set_output("Database not available")
             return
+
         try:
             with self.conn.cursor() as cur:
                 cur.execute(
-                    "SELECT command, timestamp FROM command_history ORDER BY timestamp DESC LIMIT 10"
+                    "SELECT command, timestamp FROM command_history "
+                    "ORDER BY timestamp DESC LIMIT 10"
                 )
                 rows = cur.fetchall()
-                history = "\n".join([f"{row[1]}: {' '.join(row[0])}" for row in rows])
-                self.query_one("#output", Static).update(history or "No history")
-        except psycopg2.Error as e:
-            self.query_one("#output", Static).update(f"Error: {str(e)}")
+            history = "\n".join(f"{row[1]}: {' '.join(row[0])}" for row in rows)
+            self.set_output(history or "No history")
+        except psycopg2.Error as exc:
+            self.set_output(f"Error: {exc}")
 
 
 def main():
-    app = GitTUI()
-    app.run()
+    app = GitGUI()
+    app.root.mainloop()
 
 
 if __name__ == "__main__":

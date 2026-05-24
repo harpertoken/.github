@@ -20,10 +20,10 @@ def run_command(cmd, desc):
 
 def main():
     checks = [
-        (["python3", "-m", "ruff", "check", "."], "Ruff linting"),
-        (["python3", "-m", "ruff", "format", "--check", "."], "Ruff formatting"),
-        (["python3", "-m", "bandit", "-r", "main.py"], "Bandit security scan"),
-        (["python3", "run_tests.py"], "Tests with coverage"),
+        ([sys.executable, "-m", "ruff", "check", "."], "Ruff linting"),
+        ([sys.executable, "-m", "ruff", "format", "--check", "."], "Ruff formatting"),
+        ([sys.executable, "-m", "bandit", "-r", "main.py"], "Bandit security scan"),
+        ([sys.executable, "run_tests.py"], "Tests with coverage"),
     ]
 
     all_passed = True

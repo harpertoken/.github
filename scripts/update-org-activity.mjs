@@ -47,6 +47,14 @@ function escapeMarkdown(text) {
   return String(text).replace(/[\[\]]/g, "\\$&").trim();
 }
 
+function escapeTableCell(text) {
+  return String(text).replace(/\|/g, "\\|").replace(/\n/g, " ").trim();
+}
+
+function activityRow(date, actor, activity, repo) {
+  return `| ${date} | ${escapeTableCell(actor)} | ${escapeTableCell(activity)} | ${repo} |`;
+}
+
 function eventToLine(event) {
   const date = yyyyMmDd(event.created_at);
   const actor = event.actor?.login ? `@${event.actor.login}` : "someone";
@@ -70,7 +78,8 @@ function eventToLine(event) {
 
     const commitsText =
       commitCount === 1 ? "1 commit" : commitCount > 1 ? `${commitCount} commits` : "commits";
-    return `- ${date} — ${actor} pushed ${commitsText} to ${repoLink}${targetUrl ? ` ([diff](${targetUrl}))` : ""}`;
+    const activity = targetUrl ? `pushed ${commitsText} ([diff](${targetUrl}))` : `pushed ${commitsText}`;
+    return activityRow(date, actor, activity, repoLink);
   }
 
   if (type === "PullRequestEvent" && payload.pull_request) {
@@ -78,7 +87,7 @@ function eventToLine(event) {
     const pr = payload.pull_request;
     const prNumber = pr.number ? `#${pr.number}` : "";
     const title = pr.title ? `: ${escapeMarkdown(pr.title)}` : "";
-    return `- ${date} — ${actor} ${action} PR [${prNumber}${title}](${pr.html_url}) in ${repoLink}`;
+    return activityRow(date, actor, `${action} PR [${prNumber}${title}](${pr.html_url})`, repoLink);
   }
 
   if (type === "IssuesEvent" && payload.issue) {
@@ -86,33 +95,38 @@ function eventToLine(event) {
     const issue = payload.issue;
     const issueNumber = issue.number ? `#${issue.number}` : "";
     const title = issue.title ? `: ${escapeMarkdown(issue.title)}` : "";
-    return `- ${date} — ${actor} ${action} issue [${issueNumber}${title}](${issue.html_url}) in ${repoLink}`;
+    return activityRow(date, actor, `${action} issue [${issueNumber}${title}](${issue.html_url})`, repoLink);
   }
 
   if (type === "IssueCommentEvent" && payload.comment) {
     const action = payload.action || "commented on";
     const comment = payload.comment;
     const issueUrl = payload.issue?.html_url || payload.pull_request?.html_url || comment.html_url;
-    return `- ${date} — ${actor} ${action} [a thread](${issueUrl}) in ${repoLink}`;
+    return activityRow(date, actor, `${action} [a thread](${issueUrl})`, repoLink);
   }
 
   if (type === "ReleaseEvent" && payload.release) {
     const action = payload.action || "published";
     const release = payload.release;
     const tag = release.tag_name ? ` ${escapeMarkdown(release.tag_name)}` : "";
-    return `- ${date} — ${actor} ${action} a release${tag} in ${repoLink} ([link](${release.html_url}))`;
+    return activityRow(date, actor, `${action} a release${tag} ([link](${release.html_url}))`, repoLink);
   }
 
   if (type === "ForkEvent" && payload.forkee?.html_url) {
-    return `- ${date} — ${actor} forked ${repoLink} to [${escapeMarkdown(payload.forkee.full_name || "a fork")}](${payload.forkee.html_url})`;
+    return activityRow(
+      date,
+      actor,
+      `forked to [${escapeMarkdown(payload.forkee.full_name || "a fork")}](${payload.forkee.html_url})`,
+      repoLink,
+    );
   }
 
   if (type === "PublicEvent") {
-    return `- ${date} — ${actor} made ${repoLink} public`;
+    return activityRow(date, actor, "made public", repoLink);
   }
 
   // Fallback: keep it short and still link to the repo.
-  return `- ${date} — ${actor} ${escapeMarkdown(type)} in ${repoLink}`;
+  return activityRow(date, actor, escapeMarkdown(type), repoLink);
 }
 
 async function fetchJson(url) {
@@ -191,11 +205,16 @@ for (const ev of allEvents) {
 }
 
 if (lines.length === 0) {
-  lines.push("- _No recent public activity found._");
+  lines.push("| - | - | _No recent public activity found._ | - |");
 }
 
 const current = await fs.readFile(OUTPUT_FILE, "utf8");
-const next = updateReadme(current, lines);
+const activityTable = [
+  "| Date | Actor | Activity | Repo |",
+  "| --- | --- | --- | --- |",
+  ...lines,
+];
+const next = updateReadme(current, activityTable);
 
 if (next !== current) {
   await fs.writeFile(OUTPUT_FILE, next, "utf8");

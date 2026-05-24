@@ -3,20 +3,17 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "git-tui"
+name = "git-gui"
 version = "0.1.2"
-description = "A simple TUI for Git operations"
+description = "A simple GUI for Git operations"
 authors = [{name = "Niladri Das"}]
-dependencies = [
-    "textual",
-]
+dependencies = []
 
 [project.optional-dependencies]
 test = [
     "pytest",
     "pytest-asyncio",
     "pytest-cov",
-    "textual[test]",
     "bandit",
     "ruff",
 ]
@@ -25,7 +22,7 @@ postgres = [
 ]
 
 [project.scripts]
-git-tui = "main:main"
+git-gui = "main:main"
 
 [tool.setuptools]
 py-modules = ["main"]
@@ -33,7 +30,7 @@ py-modules = ["main"]
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["main*"]
-exclude = ["tests*", "docs*", "scripts*", "images*", "profile*", ".kilo*"]
+exclude = ["tests*", "docs*", "scripts*", "images*", "profile*"]
 
 [tool.ruff]
 line-length = 88

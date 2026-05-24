@@ -1,10 +1,7 @@
-# Contributing
+Use the repository's own contributing notes when they exist.
 
-**Note:** This is a default guide for the `harpertoken` GitHub organization.
+Otherwise:
 
-<sup>If a repository has its own `CONTRIBUTING.md`, use that instead.</sup>
-
-
----
-
-*For project-specific instructions, please refer to the individual repository's documentation.*
+- keep changes small
+- explain the reason
+- include tests for behavior changes

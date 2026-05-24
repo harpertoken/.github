@@ -1,17 +1,7 @@
-![harpertoken background](https://github.com/harpertoken/.github/raw/main/profile/new_background.jpg)
-
-### ✦ About
-
-We build in public with a tight feedback loop: ship small, test often, and document decisions.
-
----
-
-### ✨ What's new
-
-Highlights from across the org, with a live activity feed below.
+<a href="https://huggingface.co/harpertoken" aria-label="harpertoken on Hugging Face"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#44403c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg> <code>harpertoken</code></a>
 
 <details>
-  <summary><strong>org activity</strong></summary>
+  <summary>activity</summary>
   <br />
 
 <!-- ORG_ACTIVITY:START -->
