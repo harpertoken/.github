@@ -1,4 +1,4 @@
-<a href="https://huggingface.co/harpertoken" aria-label="harpertoken on Hugging Face"><img src="https://github.com/harpertoken/.github/raw/main/profile/mark.svg" width="16" height="16" alt=""> <code>harpertoken</code></a>
+<a href="https://huggingface.co/harpertoken" aria-label="harpertoken on Hugging Face"><img src="https://github.com/harpertoken/.github/raw/main/profile/mark.svg" width="16" height="16" alt=""></a> <code>harpertoken</code>
 
 <details>
   <summary>activity</summary>
