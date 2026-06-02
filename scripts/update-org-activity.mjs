@@ -35,6 +35,18 @@ function repoUrl(repoFullName) {
   return `https://github.com/${repoFullName}`;
 }
 
+function pullRequestUrl(repoFullName, pr) {
+  if (pr?.html_url) return pr.html_url;
+  if (repoFullName && pr?.number) return `${repoUrl(repoFullName)}/pull/${pr.number}`;
+  return repoFullName ? `${repoUrl(repoFullName)}/pulls` : "";
+}
+
+function issueUrl(repoFullName, issue) {
+  if (issue?.html_url) return issue.html_url;
+  if (repoFullName && issue?.number) return `${repoUrl(repoFullName)}/issues/${issue.number}`;
+  return repoFullName ? `${repoUrl(repoFullName)}/issues` : "";
+}
+
 function yyyyMmDd(isoString) {
   try {
     return new Date(isoString).toISOString().slice(0, 10);
@@ -87,7 +99,8 @@ function eventToLine(event) {
     const pr = payload.pull_request;
     const prNumber = pr.number ? `#${pr.number}` : "";
     const title = pr.title ? `: ${escapeMarkdown(pr.title)}` : "";
-    return activityRow(date, actor, `${action} PR [${prNumber}${title}](${pr.html_url})`, repoLink);
+    const url = pullRequestUrl(repoFullName, pr);
+    return activityRow(date, actor, `${action} PR [${prNumber}${title}](${url})`, repoLink);
   }
 
   if (type === "IssuesEvent" && payload.issue) {
@@ -95,7 +108,8 @@ function eventToLine(event) {
     const issue = payload.issue;
     const issueNumber = issue.number ? `#${issue.number}` : "";
     const title = issue.title ? `: ${escapeMarkdown(issue.title)}` : "";
-    return activityRow(date, actor, `${action} issue [${issueNumber}${title}](${issue.html_url})`, repoLink);
+    const url = issueUrl(repoFullName, issue);
+    return activityRow(date, actor, `${action} issue [${issueNumber}${title}](${url})`, repoLink);
   }
 
   if (type === "IssueCommentEvent" && payload.comment) {
