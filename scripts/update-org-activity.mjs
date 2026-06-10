@@ -4,7 +4,7 @@ const ORG =
   process.env.ORG_NAME ||
   process.env.GITHUB_REPOSITORY_OWNER ||
   process.env.GITHUB_ACTOR;
-const OUTPUT_FILE = process.env.OUTPUT_FILE || "profile/readme.md";
+const OUTPUT_FILE = process.env.OUTPUT_FILE || "profile/README.md";
 const MAX_ITEMS = Number.parseInt(process.env.MAX_ITEMS || "15", 10);
 const EXCLUDE_TYPES = new Set(
   (process.env.EXCLUDE_TYPES || "WatchEvent")

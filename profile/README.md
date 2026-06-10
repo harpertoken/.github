@@ -1,4 +1,24 @@
-<a href="https://huggingface.co/harpertoken" aria-label="harpertoken on Hugging Face"><img src="https://github.com/harpertoken/.github/raw/main/profile/mark.svg" width="16" height="16" alt=""></a> <code>harpertoken</code>
+<p>
+  <img src="https://github.com/harpertoken/.github/raw/main/profile/mark.svg" width="64" height="64" alt="">
+</p>
+
+# harpertoken
+
+`harpertoken` is a public warehouse for apps, tooling, releases, and experiments.
+
+## What is here
+
+- Public repositories for software and infrastructure work
+- Release automation and distribution assets
+- Bots, helpers, and maintenance tools
+- Archived or moved projects that still need a stable public home
+
+## Links
+
+<img src="https://github.com/harpertoken/.github/raw/main/profile/mark.svg" width="16" height="16" alt=""> [`home`](https://huggingface.co/harpertoken)<br>
+<img src="https://github.com/harpertoken/.github/raw/main/profile/source.svg" width="16" height="16" alt=""> [`source`](https://github.com/harpertoken/.github)
+
+## Org activity
 
 <details>
   <summary>activity</summary>
