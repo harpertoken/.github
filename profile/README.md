@@ -1,7 +1,3 @@
-<p>
-  <img src="https://raw.githubusercontent.com/harpertoken/.github/main/profile/mark.svg" width="64" height="64" alt="Harper Token">
-</p>
-
 # harpertoken
 
 `harpertoken` is a public warehouse for apps, tooling, releases, and experiments.
@@ -15,7 +11,6 @@
 
 ## Links
 
-<img src="https://raw.githubusercontent.com/harpertoken/.github/main/profile/mark.svg" width="16" height="16" alt=""> [`home`](https://huggingface.co/harpertoken)<br>
 <img src="https://raw.githubusercontent.com/harpertoken/.github/main/profile/source.svg" width="16" height="16" alt=""> [`source`](https://github.com/harpertoken/.github)
 
 ## Org activity
