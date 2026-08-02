@@ -1,3 +1,7 @@
+[![harpertoken banner](https://raw.githubusercontent.com/harpertoken/.github/main/profile/banner.png)](https://github.com/harpertoken/.github)
+
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-harpertoken-fcd34d?logo=huggingface&logoColor=black)](https://huggingface.co/harpertoken)
+
 # harpertoken
 
 `harpertoken` is a public warehouse for apps, tooling, releases, and experiments.
