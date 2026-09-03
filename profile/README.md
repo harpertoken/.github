@@ -10,11 +10,6 @@ Small open source tools for text and tokens.
 
 [See all repos](https://github.com/orgs/harpertoken/repositories)
 
-<p>
-  <img src="https://raw.githubusercontent.com/harpertoken/.github/main/profile/mark.svg" alt="mark" height="24">
-  <img src="https://raw.githubusercontent.com/harpertoken/.github/main/profile/brand.png" alt="brand" height="48">
-</p>
-
 </div>
 
 ---
