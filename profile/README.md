@@ -2,20 +2,67 @@
 
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-harpertoken-fcd34d?logo=huggingface&logoColor=black)](https://huggingface.co/harpertoken)
 
-# harpertoken
+<div align="center">
 
-`harpertoken` is a public warehouse for apps, tooling, releases, and experiments.
+# harpertoken - small text tools
 
-## What is here
+**History is boring. Building is fun.**
 
-- Public repositories for software and infrastructure work
-- Release automation and distribution assets
-- Bots, helpers, and maintenance tools
-- Archived or moved projects that still need a stable public home
+We make small open source tools to work with text and tokens. You can read them, copy them, and use them in your work.
 
-## Links
+[See all repos](https://github.com/orgs/harpertoken/repositories)
 
-<img src="https://raw.githubusercontent.com/harpertoken/.github/main/profile/source.svg" width="16" height="16" alt=""> [`source`](https://github.com/harpertoken/.github)
+</div>
+
+---
+
+### What is here?
+
+Simple tools, not big talk.
+
+**1. Text tools**
+- [`harper`](https://github.com/harpertoken/harper) - Fast text tools in Rust. Simple to use.
+- [`llamaware`](https://github.com/harpertoken/llamaware) - Code with AI help in C++. Small dev tools.
+
+**2. Web and install**
+- [`harpertoken.github.io`](https://github.com/harpertoken/harpertoken.github.io) - Public web page for Harpertoken org in JavaScript.
+- [`homebrew-tap`](https://github.com/harpertoken/homebrew-tap) - Install tools on Mac with Homebrew in Ruby.
+
+**3. Help for new folks**
+- [`welcome-bot`](https://github.com/harpertoken/welcome-bot) - Bot to say hello to new helpers in JavaScript.
+- [`welcome-issues`](https://github.com/harpertoken/welcome-issues) - Simple issue notes to welcome new helpers.
+
+Want more? [See all 7 repos here](https://github.com/orgs/harpertoken/repositories).
+
+### How to start
+
+Do this in 3 steps.
+
+```bash
+# 1. Pick one. For example the text tool:
+git clone https://github.com/harpertoken/harper.git && cd harper
+
+# 2. Or pick the AI helper:
+git clone https://github.com/harpertoken/llamaware.git && cd llamaware
+```
+
+That is it. Read it. Run it. Change it.
+
+### Want to help?
+
+You are welcome.
+
+- **Copy and try** - free to use.
+- **Ask** - open an issue if you want a new tool or find a bug.
+- **Share** - small pull requests are best.
+
+---
+
+<div align="center">
+
+[github](https://github.com/harpertoken) • [site](https://github.com/harpertoken/harpertoken.github.io) • [issues](https://github.com/harpertoken/.github/issues)
+
+</div>
 
 ## Org activity
 
