@@ -4,11 +4,9 @@
 
 <div align="center">
 
-# harpertoken - small text tools
+# harpertoken
 
-**History is boring. Building is fun.**
-
-We make small open source tools to work with text and tokens. You can read them, copy them, and use them in your work.
+Small open source tools for text and tokens.
 
 [See all repos](https://github.com/orgs/harpertoken/repositories)
 
@@ -16,45 +14,34 @@ We make small open source tools to work with text and tokens. You can read them,
 
 ---
 
-### What is here?
+### Repos
 
-Simple tools, not big talk.
+**Text tools**
+- [`harper`](https://github.com/harpertoken/harper) - Fast text tools in Rust.
+- [`llamaware`](https://github.com/harpertoken/llamaware) - Code with AI help in C++.
 
-**1. Text tools**
-- [`harper`](https://github.com/harpertoken/harper) - Fast text tools in Rust. Simple to use.
-- [`llamaware`](https://github.com/harpertoken/llamaware) - Code with AI help in C++. Small dev tools.
-
-**2. Web and install**
-- [`harpertoken.github.io`](https://github.com/harpertoken/harpertoken.github.io) - Public web page for Harpertoken org in JavaScript.
+**Web and install**
+- [`harpertoken.github.io`](https://github.com/harpertoken/harpertoken.github.io) - Public web page in JavaScript.
 - [`homebrew-tap`](https://github.com/harpertoken/homebrew-tap) - Install tools on Mac with Homebrew in Ruby.
 
-**3. Help for new folks**
-- [`welcome-bot`](https://github.com/harpertoken/welcome-bot) - Bot to say hello to new helpers in JavaScript.
-- [`welcome-issues`](https://github.com/harpertoken/welcome-issues) - Simple issue notes to welcome new helpers.
+**Help for new folks**
+- [`welcome-bot`](https://github.com/harpertoken/welcome-bot) - Bot to greet new helpers in JavaScript.
+- [`welcome-issues`](https://github.com/harpertoken/welcome-issues) - Issue notes for new helpers.
 
-Want more? [See all 7 repos here](https://github.com/orgs/harpertoken/repositories).
+[All 7 repos](https://github.com/orgs/harpertoken/repositories).
 
-### How to start
-
-Do this in 3 steps.
+### Start
 
 ```bash
-# 1. Pick one. For example the text tool:
 git clone https://github.com/harpertoken/harper.git && cd harper
-
-# 2. Or pick the AI helper:
 git clone https://github.com/harpertoken/llamaware.git && cd llamaware
 ```
 
-That is it. Read it. Run it. Change it.
+### Contribute
 
-### Want to help?
-
-You are welcome.
-
-- **Copy and try** - free to use.
-- **Ask** - open an issue if you want a new tool or find a bug.
-- **Share** - small pull requests are best.
+- Use: free to use.
+- Report: open an issue for bugs or requests.
+- Change: small pull requests preferred.
 
 ---
 
