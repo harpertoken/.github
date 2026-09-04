@@ -1,55 +1,18 @@
-[![harpertoken banner](https://raw.githubusercontent.com/harpertoken/.github/main/profile/banner.png)](https://github.com/harpertoken/.github)
+## Hi there
 
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-harpertoken-fcd34d?logo=huggingface&logoColor=black)](https://huggingface.co/harpertoken)
+harpertoken is a public home for text tooling, releases, and small experiments.
 
-<div align="center">
+Important repositories for text and code
+- [harper](https://github.com/harpertoken/harper) - Rust-based text processing and language tooling.
+- [llamaware](https://github.com/harpertoken/llamaware) - AI-assisted coding tools and developer workflows.
 
-# harpertoken
+Important repositories for web and install
+- [harpertoken.github.io](https://github.com/harpertoken/harpertoken.github.io) - Public website and organization landing page.
+- [homebrew-tap](https://github.com/harpertoken/homebrew-tap) - Homebrew formulas for Harpertoken projects.
 
-Small open source tools for text and tokens.
-
-[See all repos](https://github.com/orgs/harpertoken/repositories)
-
-</div>
-
----
-
-### Repos
-
-**Text tools**
-- [`harper`](https://github.com/harpertoken/harper) - Fast text tools in Rust.
-- [`llamaware`](https://github.com/harpertoken/llamaware) - Code with AI help in C++.
-
-**Web and install**
-- [`harpertoken.github.io`](https://github.com/harpertoken/harpertoken.github.io) - Public web page in JavaScript.
-- [`homebrew-tap`](https://github.com/harpertoken/homebrew-tap) - Install tools on Mac with Homebrew in Ruby.
-
-**Help for new folks**
-- [`welcome-bot`](https://github.com/harpertoken/welcome-bot) - Bot to greet new helpers in JavaScript.
-- [`welcome-issues`](https://github.com/harpertoken/welcome-issues) - Issue notes for new helpers.
-
-[All 7 repos](https://github.com/orgs/harpertoken/repositories).
-
-### Start
-
-```bash
-git clone https://github.com/harpertoken/harper.git && cd harper
-git clone https://github.com/harpertoken/llamaware.git && cd llamaware
-```
-
-### Contribute
-
-- Use: free to use.
-- Report: open an issue for bugs or requests.
-- Change: small pull requests preferred.
-
----
-
-<div align="center">
-
-[github](https://github.com/harpertoken) • [site](https://github.com/harpertoken/harpertoken.github.io) • [issues](https://github.com/harpertoken/.github/issues)
-
-</div>
+Important repositories for new contributors
+- [welcome-bot](https://github.com/harpertoken/welcome-bot) - Automated welcome and onboarding bot for contributors.
+- [welcome-issues](https://github.com/harpertoken/welcome-issues) - Issue templates and workflows for welcoming new contributors.
 
 ## Org activity
 
