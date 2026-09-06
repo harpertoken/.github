@@ -1,18 +1,42 @@
 ## Hi there
 
-harpertoken is a public home for text tooling, releases, and small experiments.
+coccinella-labs is a consolidated home for developer tooling: GPU runtimes, machine learning and inference, text and code tools, SDKs, release automation, and small utilities.
 
 Important repositories for text and code
-- [harper](https://github.com/harpertoken/harper) - Rust-based text processing and language tooling.
-- [llamaware](https://github.com/harpertoken/llamaware) - AI-assisted coding tools and developer workflows.
+- [harper](https://github.com/coccinella-labs/harper) - Rust-based text processing and language tooling.
+- [harper-notes](https://github.com/coccinella-labs/harper-notes) - Harper notes.
+- [llamaware](https://github.com/coccinella-labs/llamaware) - AI-assisted coding tools and developer workflows.
+- [dotfiles](https://github.com/coccinella-labs/dotfiles) - Dotfiles for Mac.
 
-Important repositories for web and install
-- [harpertoken.github.io](https://github.com/harpertoken/harpertoken.github.io) - Public website and organization landing page.
-- [homebrew-tap](https://github.com/harpertoken/homebrew-tap) - Homebrew formulas for Harpertoken projects.
+Important repositories for GPU and inference
+- [core](https://github.com/coccinella-labs/core) - Metal-based GPU compute runtime for Apple Silicon.
+- [gpucomm-fs](https://github.com/coccinella-labs/gpucomm-fs) - Binary-aware artifact store for GPU artifacts, datasets, and weights.
+- [gpucomm-bot](https://github.com/coccinella-labs/gpucomm-bot) - GPU-aware GitHub App and CI automation.
+- [bitinfer](https://github.com/coccinella-labs/bitinfer) - Inference framework.
+- [ml](https://github.com/coccinella-labs/ml) - Machine learning framework.
+- [mlapi](https://github.com/coccinella-labs/mlapi) - Machine learning API.
+- [benchmark](https://github.com/coccinella-labs/benchmark) - Speech benchmark.
 
-Important repositories for new contributors
-- [welcome-bot](https://github.com/harpertoken/welcome-bot) - Automated welcome and onboarding bot for contributors.
-- [welcome-issues](https://github.com/harpertoken/welcome-issues) - Issue templates and workflows for welcoming new contributors.
+Important repositories for automation and CLIs
+- [bot](https://github.com/coccinella-labs/bot) - Automation bot for emberlamp organization.
+- [hub](https://github.com/coccinella-labs/hub) - Central hub for emberlamp organization - connects all repos.
+- [cli](https://github.com/coccinella-labs/cli) - Master CLI to control all emberlamp repos.
+- [cli-tools](https://github.com/coccinella-labs/cli-tools) - CLI tools.
+- [go-kit](https://github.com/coccinella-labs/go-kit) - Build kit Go CLI foundation.
+- [gon](https://github.com/coccinella-labs/gon) - Reviews Dependabot pull requests.
+- [dependabot-review](https://github.com/coccinella-labs/dependabot-review) - Dependabot review action.
+
+Other repositories for apps and utilities
+- [vertex](https://github.com/coccinella-labs/vertex) - Understand software before you change it.
+- [press](https://github.com/coccinella-labs/press) - A bookshelf of Christian books.
+- [palmshed](https://github.com/coccinella-labs/palmshed) - Personal site and notes in TypeScript.
+- [browser](https://github.com/coccinella-labs/browser) - Flutter browser app.
+- [tts](https://github.com/coccinella-labs/tts) - Text to speech.
+- [clipb](https://github.com/coccinella-labs/clipb) - A lightweight clipboard utility for developers.
+- [mini](https://github.com/coccinella-labs/mini) - A minimal Go utility library.
+- [craft](https://github.com/coccinella-labs/craft) - Experimental Rust developer tool.
+
+[View all repositories →](https://github.com/orgs/coccinella-labs/repositories)
 
 ## Org activity
 
