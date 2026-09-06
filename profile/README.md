@@ -5,7 +5,7 @@ coccinella-labs is a consolidated home for developer tooling: GPU runtimes, mach
 Important repositories for text and code
 - [harper](https://github.com/coccinella-labs/harper) - Rust-based text processing and language tooling.
 - [harper-notes](https://github.com/coccinella-labs/harper-notes) - Harper notes.
-- [llamaware](https://github.com/coccinella-labs/llamaware) - AI-assisted coding tools and developer workflows.
+- [agentware](https://github.com/coccinella-labs/agentware) - AI-assisted coding tools and developer workflows.
 - [dotfiles](https://github.com/coccinella-labs/dotfiles) - Dotfiles for Mac.
 
 Important repositories for GPU and inference
@@ -31,6 +31,7 @@ Other repositories for apps and utilities
 - [press](https://github.com/coccinella-labs/press) - A bookshelf of Christian books.
 - [palmshed](https://github.com/coccinella-labs/palmshed) - Personal site and notes in TypeScript.
 - [browser](https://github.com/coccinella-labs/browser) - Flutter browser app.
+- [vision](https://github.com/coccinella-labs/vision) - Vision demo.
 - [tts](https://github.com/coccinella-labs/tts) - Text to speech.
 - [clipb](https://github.com/coccinella-labs/clipb) - A lightweight clipboard utility for developers.
 - [mini](https://github.com/coccinella-labs/mini) - A minimal Go utility library.
