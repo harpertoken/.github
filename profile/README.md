@@ -18,9 +18,9 @@ Important repositories for GPU and inference
 - [benchmark](https://github.com/coccinella-labs/benchmark) - Speech benchmark.
 
 Important repositories for automation and CLIs
-- [bot](https://github.com/coccinella-labs/bot) - Automation bot for emberlamp organization.
-- [hub](https://github.com/coccinella-labs/hub) - Central hub for emberlamp organization - connects all repos.
-- [cli](https://github.com/coccinella-labs/cli) - Master CLI to control all emberlamp repos.
+- [bot](https://github.com/coccinella-labs/bot) - Automation bot.
+- [hub](https://github.com/coccinella-labs/hub) - Central hub - connects all repos.
+- [cli](https://github.com/coccinella-labs/cli) - Master CLI to control all repos.
 - [cli-tools](https://github.com/coccinella-labs/cli-tools) - CLI tools.
 - [go-kit](https://github.com/coccinella-labs/go-kit) - Build kit Go CLI foundation.
 - [gon](https://github.com/coccinella-labs/gon) - Reviews Dependabot pull requests.
