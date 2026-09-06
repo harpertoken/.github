@@ -47,21 +47,21 @@ Other repositories for apps and utilities
 <!-- ORG_ACTIVITY:START -->
 | Date | Actor | Activity | Repo |
 | --- | --- | --- | --- |
-| 2026-09-06 | @github-actions[bot] | created [a thread](https://github.com/coccinella-labs/rag/pull/105) | [coccinella-labs/rag](https://github.com/coccinella-labs/rag) |
-| 2026-09-06 | @github-actions[bot] | created [a thread](https://github.com/coccinella-labs/rag/pull/104) | [coccinella-labs/rag](https://github.com/coccinella-labs/rag) |
-| 2026-09-06 | @bniladridas | pushed commits ([diff](https://github.com/coccinella-labs/.github/compare/60673e3c086f8918b4213b553ab5916388e06969...0eaa9e11640813cc151a3628d20db30768b957a3)) | [coccinella-labs/.github](https://github.com/coccinella-labs/.github) |
-| 2026-09-06 | @coccinella-labs | MemberEvent | [coccinella-labs/.github](https://github.com/coccinella-labs/.github) |
-| 2026-09-06 | @coccinella-labs | MemberEvent | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
-| 2026-09-06 | @coccinella-labs | MemberEvent | [coccinella-labs/llamaware](https://github.com/coccinella-labs/llamaware) |
-| 2026-09-06 | @github-actions[bot] | published a release nightly-20260906 ([link](https://github.com/coccinella-labs/diff-mac/releases/tag/nightly-20260906)) | [coccinella-labs/diff-mac](https://github.com/coccinella-labs/diff-mac) |
-| 2026-09-06 | @dependabot[bot] | DeleteEvent | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-03 | @dependabot[bot] | closed PR [#5](https://github.com/coccinella-labs/gh-tag/pull/5) | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-06 | @dependabot[bot] | created [a thread](https://github.com/coccinella-labs/gh-tag/pull/5) | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-06 | @dependabot[bot] | labeled PR [#6](https://github.com/coccinella-labs/gh-tag/pull/6) | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-06 | @dependabot[bot] | labeled PR [#6](https://github.com/coccinella-labs/gh-tag/pull/6) | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-06 | @dependabot[bot] | opened PR [#6](https://github.com/coccinella-labs/gh-tag/pull/6) | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-06 | @dependabot[bot] | CreateEvent | [coccinella-labs/gh-tag](https://github.com/coccinella-labs/gh-tag) |
-| 2026-09-06 | @dependabot[bot] | DeleteEvent | [coccinella-labs/release-notes](https://github.com/coccinella-labs/release-notes) |
+| 2026-09-06 | @dependabot[bot] | created [a thread](https://github.com/coccinella-labs/harper/pull/748) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-03 | @dependabot[bot] | closed PR [#748](https://github.com/coccinella-labs/harper/pull/748) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | labeled PR [#758](https://github.com/coccinella-labs/harper/pull/758) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | labeled PR [#758](https://github.com/coccinella-labs/harper/pull/758) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | CreateEvent | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | opened PR [#758](https://github.com/coccinella-labs/harper/pull/758) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | DeleteEvent | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | created [a thread](https://github.com/coccinella-labs/harper/pull/751) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-03 | @dependabot[bot] | closed PR [#751](https://github.com/coccinella-labs/harper/pull/751) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | labeled PR [#757](https://github.com/coccinella-labs/harper/pull/757) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | labeled PR [#757](https://github.com/coccinella-labs/harper/pull/757) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | CreateEvent | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | labeled PR [#757](https://github.com/coccinella-labs/harper/pull/757) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | labeled PR [#757](https://github.com/coccinella-labs/harper/pull/757) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
+| 2026-09-06 | @dependabot[bot] | opened PR [#757](https://github.com/coccinella-labs/harper/pull/757) | [coccinella-labs/harper](https://github.com/coccinella-labs/harper) |
 <!-- ORG_ACTIVITY:END -->
-_Last updated: 2026-09-06T08:15:53.384Z • IST: 6/9/2026, 13:45:53 (1:45:53 pm)_
+_Last updated: 2026-09-06T09:34:09.483Z • IST: 6/9/2026, 15:04:09 (3:04:09 pm)_
 </details>
